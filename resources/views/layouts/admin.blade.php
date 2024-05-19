@@ -13,6 +13,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link href="/style/main.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/v/bs4/dt-2.0.7/datatables.min.css" rel="stylesheet">
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
 
     @stack('addon-style')
 </head>
@@ -26,16 +27,19 @@
                     <img src="/images/admin.png" alt="" class="my-4" style="max-width: 150px;" />
                 </div>
                 <div class="list-group list-group-flush">
-                    <a href="{{ route('admin-dashboard') }}" class="list-group-item list-group-item-action ">
+                    <a href="{{ route('admin-dashboard') }}"
+                        class="list-group-item list-group-item-action {{ request()->is('admin') ? 'active' : '' }} ">
                         Dashboard
                     </a>
-                    <a href="" class="list-group-item list-group-item-action ">
+                    <a href="{{ route('product.index') }}"
+                        class="list-group-item list-group-item-action {{ request()->is('admin/product') ? 'active' : '' }} ">
                         Products
                     </a>
                     <a href="/" class="list-group-item list-group-item-action  ">
                         Galleries
                     </a>
-                    <a href="/" class="list-group-item list-group-item-action  ">
+                    <a href="{{ route('category.index') }}"
+                        class="list-group-item list-group-item-action {{ request()->is('admin/category*') ? 'active' : '' }} ">
                         Categories
                     </a>
                     <a href="/" class="list-group-item list-group-item-action">
@@ -108,6 +112,9 @@
     <script src="https://cdn.datatables.net/v/bs4/dt-2.0.7/datatables.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        $("#datatable").DataTable();
+    </script>
+    <script>
         AOS.init();
     </script>
     <!-- Menu Toggle Script -->
@@ -118,6 +125,7 @@
         });
     </script>
     @stack('addon-script')
+
 </body>
 
 </html>

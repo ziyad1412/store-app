@@ -11,6 +11,8 @@ use App\Http\Controllers\DetailController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController; // alias untuk DashboardController di dalam namespace Admin
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController as UserDashboardController; // alias untuk DashboardController di luar namespace Admin
 
 /*
@@ -48,4 +50,6 @@ Route::get('/dashboard/account', [DashboardSettingController::class, 'account'])
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminDashboardController::class, 'index'])->name('admin-dashboard');
     Route::resource('category', AdminCategoryController::class);
+    Route::resource('user', UserController::class);
+    Route::resource('product', ProductController::class);
 });
