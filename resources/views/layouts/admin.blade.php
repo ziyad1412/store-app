@@ -35,7 +35,8 @@
                         class="list-group-item list-group-item-action {{ request()->is('admin/product') ? 'active' : '' }} ">
                         Products
                     </a>
-                    <a href="/" class="list-group-item list-group-item-action  ">
+                    <a href="{{ route('product-gallery.index') }}"
+                        class="list-group-item list-group-item-action {{ request()->is('admin/product-gallery*') ? 'active' : '' }}">
                         Galleries
                     </a>
                     <a href="{{ route('category.index') }}"
@@ -45,7 +46,8 @@
                     <a href="/" class="list-group-item list-group-item-action">
                         Transactions
                     </a>
-                    <a href="/" class="list-group-item list-group-item-action ">
+                    <a href="{{ route('user.index') }}"
+                        class="list-group-item list-group-item-action {{ request()->is('admin/user*') ? 'active' : '' }}">
                         Users
                     </a>
                     <a href="/index.html" class="list-group-item list-group-item-action">

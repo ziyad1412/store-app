@@ -12,6 +12,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController; // alias untuk DashboardController di dalam namespace Admin
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductGalleryController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\DashboardController as UserDashboardController; // alias untuk DashboardController di luar namespace Admin
 
@@ -31,6 +32,7 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/categories', [UserCategoryController::class, 'index'])->name('categories');
+Route::get('/categories/{id}', [UserCategoryController::class, 'detail'])->name('categories-detail');
 Route::get('/details/{id}', [DetailController::class, 'index'])->name('detail');
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 Route::get('/success', [CartController::class, 'success'])->name('success');
@@ -52,4 +54,5 @@ Route::prefix('admin')->group(function () {
     Route::resource('category', AdminCategoryController::class);
     Route::resource('user', UserController::class);
     Route::resource('product', ProductController::class);
+    Route::resource('product-gallery', ProductGalleryController::class);
 });
