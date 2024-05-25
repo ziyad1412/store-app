@@ -91,7 +91,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-success btn-block mt-4"
+                            <button type="submit" class="btn btn-primary btn-block mt-4"
                                 :disabled="this.email_unavailable">
                                 Sign Up Now
                             </button>
