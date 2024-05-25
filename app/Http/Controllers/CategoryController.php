@@ -23,7 +23,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         $category = Category::where('slug', $slug)->firstOrFail();
-        $products = Product::where('categories_id', $category->id)->paginate($request->input('limit', 4));
+        $products = Product::where('categories_id', $category->id)->paginate($request->input('limit', 8));
 
         return view('pages.category', [
             'categories' => $categories,

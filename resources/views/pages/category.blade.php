@@ -64,7 +64,7 @@
                                     {{ $product->name }}
                                 </div>
                                 <div class="products-price">
-                                    ${{ $product->price }}
+                                    {{ formatRupiah($product->price) }}
                                 </div>
                             </a>
                         </div>

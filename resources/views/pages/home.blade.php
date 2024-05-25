@@ -21,7 +21,7 @@
                                     <img src="/images/banner.jpg" alt="Carousel Image" class="d-block w-100" />
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="/images/banner.jpg" alt="Carousel Image" class="d-block w-100" />
+                                    <img src="/images/banner2.jpg" alt="Carousel Image" class="d-block w-100" />
                                 </div>
                                 <div class="carousel-item">
                                     <img src="/images/banner.jpg" alt="Carousel Image" class="d-block w-100" />
@@ -90,7 +90,7 @@
                                     {{ $product->name }}
                                 </div>
                                 <div class="products-price">
-                                    ${{ $product->price }}
+                                    {{ formatRupiah($product->price) }}
                                 </div>
                             </a>
                         </div>

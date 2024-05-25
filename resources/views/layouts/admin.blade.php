@@ -43,7 +43,8 @@
                         class="list-group-item list-group-item-action {{ request()->is('admin/category*') ? 'active' : '' }} ">
                         Categories
                     </a>
-                    <a href="/" class="list-group-item list-group-item-action">
+                    <a href="{{ route('transaction.index') }}"
+                        class="list-group-item list-group-item-action {{ request()->is('admin/transaction*') ? 'active' : '' }} ">
                         Transactions
                     </a>
                     <a href="{{ route('user.index') }}"
@@ -75,24 +76,11 @@
                                         data-toggle="dropdown">
                                         <img src="/images/icon-user.png" alt=""
                                             class="rounded-circle mr-2 profile-picture" />
-                                        Hi, Angga
+                                        Hi, {{ Auth::user()->name }}
                                     </a>
                                     <div class="dropdown-menu">
                                         <a href="/" class="dropdown-item">Logout</a>
                                     </div>
-                                </li>
-                            </ul>
-
-                            <ul class="navbar-nav d-block d-lg-none">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Hi, Angga
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link d-inline-block">
-                                        Cart
-                                    </a>
                                 </li>
                             </ul>
                         </div>

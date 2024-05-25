@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
+
 
 class CategorySeeder extends Seeder
 {
@@ -15,39 +17,29 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name' => 'Laptop',
-                'photo' => 'assets/category/laptop.png',
-                'slug' => 'laptop',
+                'name' => 'Apple',
+                'photo' => 'assets/category/apple.png',
+                'slug' => Str::slug('Apple')
             ],
             [
-                'name' => 'Smartphone',
-                'photo' => 'assets/category/smartphone.png',
-                'slug' => 'smartphone',
+                'name' => 'Dell',
+                'photo' => 'assets/category/dell.png',
+                'slug' => Str::slug('Dell')
             ],
             [
-                'name' => 'Tablet',
-                'photo' => 'assets/category/tablet.png',
-                'slug' => 'tablet',
+                'name' => 'Asus',
+                'photo' => 'assets/category/asus.png',
+                'slug' => Str::slug('ASUS')
             ],
             [
-                'name' => 'Mouse',
-                'photo' => 'assets/category/mouse.png',
-                'slug' => 'mouse',
+                'name' => 'Acer',
+                'photo' => 'assets/category/acer.png',
+                'slug' => Str::slug('Acer')
             ],
             [
-                'name' => 'Keyboard',
-                'photo' => 'assets/category/keyboard.png',
-                'slug' => 'keyboard',
-            ],
-            [
-                'name' => 'Headphone',
-                'photo' => 'assets/category/headphone.png',
-                'slug' => 'headphone',
-            ],
-            [
-                'name' => 'Camera',
-                'photo' => 'assets/category/camera.png',
-                'slug' => 'camera',
+                'name' => 'Lenovo',
+                'photo' => 'assets/category/lenovo.png',
+                'slug' => Str::slug('Lenovo')
             ],
         ];
 

@@ -14,9 +14,11 @@
                 <li class="nav-item">
                     <a href="{{ route('categories') }}" class="nav-link">Categories</a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Rewards</a>
-                </li>
+                @auth
+                    <li class="nav-item">
+                        <a href="{{ route('dashboard') }}" class="nav-link">Dashboard</a>
+                    </li>
+                @endauth
                 @guest
                     <li class="nav-item">
                         <a href="{{ route('register') }}" class="nav-link">Sign Up</a>
@@ -36,11 +38,6 @@
                             Hi, {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu">
-                            <a href="{{ route('dashboard') }}" class="dropdown-item">Dashboard</a>
-                            <a href="/" class="dropdown-item">
-                                Settings
-                            </a>
-                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 Logout
@@ -49,6 +46,19 @@
                                 @csrf
                             </form>
                         </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('cart') }}" class="nav-link d-inline-block mt-2">
+                            @php
+                                $carts = \App\Models\Cart::where('users_id', Auth::user()->id)->count();
+                            @endphp
+                            @if ($carts > 0)
+                                <img src="/images/icon-cart-filled.svg" alt="" />
+                                <div class="cart-badge">{{ $carts }}</div>
+                            @else
+                                <img src="/images/icon-cart-empty.svg" alt="" />
+                            @endif
+                        </a>
                     </li>
 
                 </ul>

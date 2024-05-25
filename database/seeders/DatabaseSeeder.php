@@ -22,8 +22,10 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
             // Seeder lain yang ingin dijalankan
+            IndoRegionSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
+            ProductGallerySeeder::class,
         ]);
     }
 }
